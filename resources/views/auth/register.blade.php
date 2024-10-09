@@ -17,7 +17,7 @@
                 <p class="fs-1 ">
                     Articles Blog ti aiuta a rimanere in contatto con i fatti della tua vita
                 </p>
-               
+
             </div>
 
             <div class="col-4">
@@ -40,18 +40,18 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="text">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome">
-                        @error('nome')
+                        <label for="text">Name</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                        @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
                     </div>
 
                     <div class="form-group">
-                        <label for="text">Cognome</label>
-                        <input type="text" class="form-control" id="cognome" name="cognome">
-                        @error('cognome')
+                        <label for="text">Surname</label>
+                        <input type="text" class="form-control" id="surname" name="surname">
+                        @error('surname')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
 
@@ -68,12 +68,12 @@
 
                     <div class="form-group">
                         <label for="password_confirmation">Password Confirmation</label>
-                        <input type="password" class="form-control" id="password_confirmation" id="password"
+                        <input type="password" class="form-control" id="password_confirmation"
                             name="password_confirmation">
                     </div>
 
 
-                    <button type="submit" class="btn btn-success p-2 my-2">Accedi</button>
+                    <button type="submit" class="btn btn-success p-2 my-2">Registrati</button>
 
 
                 </form>
