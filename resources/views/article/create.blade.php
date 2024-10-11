@@ -1,22 +1,20 @@
 <x-layout>
 
     <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-5">
+        <div class="row text-center justify-content-center align-items-center">
+
+            <div class="col-5 me-5">
                 <h2 class="bg-secondary fs-1 ">Crea il tuo Articolo</h2>
+                <p>Inizia da qui per creare un nuovo articolo <br> Racconta la tua storia o/e articolo per entrare a far
+                    parte della community di inserzionisti di "blogAulab" <br> | Sharing is caring |</p>
+
             </div>
             <div class="col-5">
 
-                <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="shadow-lg rounded-3 p-4 my-5" action="{{ route('article.store') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Titolo</label>
-                        <input type="text" name="title" class="form-control" id="title"
-                            value="{{ old('title') }}">
-                        @error('title')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
+
 
                     {{-- TITLE --}}
                     <div class="mb-3">
@@ -27,6 +25,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+                    <hr>
                     {{-- SUBTITLE --}}
                     <div class="mb-3">
                         <label for="subtitle" class="form-label">Sotto-titolo</label>
@@ -36,6 +35,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+                    <hr>
                     {{-- IMAGE --}}
                     <div class="mb-3">
                         <label for="image" class="form-label">Immagine</label>
@@ -45,12 +45,13 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+                    <hr>
                     {{-- CATEGORY --}}
                     <div class="mb-3">
 
                         <label for="category" class="form-label">Categoria</label>
 
-                        <select name="category" id="category" class="form-control">
+                        <select name="category" id="category" class="form-control chooseCategory">
                             <option selected disabled>Seleziona Categoria</option>
 
                             @foreach ($categories as $category)
@@ -62,10 +63,12 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+                    <hr>
+
                     {{-- BODY --}}
                     <div class="mb-3">
-                        <label for="body" class="form-control">Corpo del testo</label>
-                        <textarea name="body" class="form-control" id="body ">{{ old('body') }}</textarea>
+                        <label for="body" class="form-label">Corpo del testo</label>
+                        <textarea name="body" class="form-control my-2" id="body ">{{ old('body') }}</textarea>
                     </div>
                     @error('body')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -73,8 +76,13 @@
 
 
 
-                    <button type="submit" class="btn btn-primary">Inserisci articolo</button>
-                    <a href="{{ route('homepage') }}">Torna alla Home</a>
+                    <button type="submit" class="btn btn-primary">
+
+                        Inserisci articolo
+
+                    </button>
+                    <hr>
+                    <a href="{{ route('homepage') }}" class="">Torna alla Home</a>
                 </form>
 
             </div>
