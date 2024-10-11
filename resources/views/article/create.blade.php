@@ -7,7 +7,8 @@
             </div>
             <div class="col-5">
 
-                <form enctype="multipart/form-data">
+                <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="mb-3">
                         <label for="title" class="form-label">Titolo</label>
                         <input type="text" name="title" class="form-control" id="title"
@@ -35,7 +36,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-
+                    {{-- IMAGE --}}
                     <div class="mb-3">
                         <label for="image" class="form-label">Immagine</label>
                         <input type="file" name="image" class="form-control" id="image"
@@ -44,7 +45,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-
+                    {{-- CATEGORY --}}
                     <div class="mb-3">
 
                         <label for="category" class="form-label">Categoria</label>
@@ -61,7 +62,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-
+                    {{-- BODY --}}
                     <div class="mb-3">
                         <label for="body" class="form-control">Corpo del testo</label>
                         <textarea name="body" class="form-control" id="body ">{{ old('body') }}</textarea>
