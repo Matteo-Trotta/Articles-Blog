@@ -14,7 +14,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Articoli</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="{{ route('article.create') }}">Aggiungi Articolo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pricing</a>
@@ -29,7 +29,7 @@
                     </li>
 
                     <form action="{{ route('logout') }}" method="POST" id="form-logout">@csrf</form>
-                    
+
                     {{-- LOGOUT --}}
                 </ul>
             @endauth
