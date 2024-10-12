@@ -1,10 +1,10 @@
 <x-layout>
 
     <div class="container-fluid">
-        <div class="row text-center justify-content-center align-items-center">
+        <div class="row text-center justify-content-center my-5 p-5">
 
             <div class="col-5 me-5">
-                <h2 class="bg-secondary fs-1 ">Crea il tuo Articolo</h2>
+                <h2 class="fs-1 redglitch ">Pubblica il tuo Articolo</h2>
                 <p>Inizia da qui per creare un nuovo articolo <br> Racconta la tua storia o/e articolo per entrare a far
                     parte della community di inserzionisti di "blogAulab" <br> | Sharing is caring |</p>
 
@@ -76,13 +76,13 @@
 
 
 
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="button-49">
 
                         Inserisci articolo
 
                     </button>
                     <hr>
-                    <a href="{{ route('homepage') }}" class="">Torna alla Home</a>
+                    <a href="{{ route('homepage') }}" class="redglitch">Torna alla Home</a>
                 </form>
 
             </div>
