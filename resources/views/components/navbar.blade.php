@@ -13,20 +13,20 @@
 
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Articoli</a>
+
+                <li class="nav-item ">
+                    <a class="nav-link active" href="{{ route('article.index') }}">Index</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
+
+
                 @auth
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('article.create') }}">Aggiungi Articolo</a>
+                        <a class="nav-link active" href="{{ route('article.create') }}">Aggiungi Articolo</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-warning" href="#">Benvenuto , {{ Auth::user()->name }}</a>
+                        <a class="nav-link active text-warning" href="#">Benvenuto , {{ Auth::user()->name }}</a>
                     </li>
                     {{-- LOGOUT --}}
                     <li>
@@ -51,7 +51,7 @@
                         <a href="{{ route('register') }}" class="btn btn-outline-primary">Registrati</a>
                     </li>
 
-                    
+
 
                 </ul>
             @endguest

@@ -114,3 +114,11 @@
         line-height: 88px;
     }
 }
+
+.active:hover
+{
+text-decoration: underline #ff013c;
+
+
+
+}
