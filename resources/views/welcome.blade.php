@@ -39,7 +39,7 @@
 
                         <div class="card-footer text-body-secondary border-separate">
                             <p>Redatto il: {{ $article->created_at->format('d/m/Y') }} <br> da:
-                                {{ $article->user->name }}</p>
+                                <a href="{{ route('article.byUser',$article->user) }}">{{ $article->user->name }}</a></p>
 
 
 

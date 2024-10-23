@@ -4,7 +4,7 @@
         <div class="row text-center">
             <div class="col-12">
 
-                <h2 class="fs-1 bg-success">Tutto su : {{ $category->name }}</h2>
+                <h2 class="fs-1 bg-success">Articoli di : {{ $user->name }}</h2>
 
             </div>
         </div>
@@ -21,12 +21,12 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $article->title }}</h5>
                             <p class="card-subtitle">{{ $article->subtitle }}</p>
-
+                            <a href="{{ route('article.byCategory',$article->category) }}">{{ $article->category->name }}</a>
                         </div>
 
                         <div class ="card-footer d-flex justify-content-between align-items-center">
                             <p>Redatto il {{ $article->created_at->format('d/m/Y') }} <br>
-                                da {{ $article->user->name }}</p>
+                                da <a href="{{ route('article.byUser',$article->user) }}">{{ $article->user->name }}</a></p>
 
                             <a href="{{ route('article.show', $article) }}" class="btn btn-success">Leggi</a>
 

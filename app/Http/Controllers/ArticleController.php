@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class ArticleController extends Controller implements HasMiddleware
     public static function middleware()
     {
         return [
-            new Middleware('auth', except: ['index', 'show'])
+            new Middleware('auth', except: ['index', 'show','byCategory','byUser'])
         ];
     }
 
@@ -82,6 +83,11 @@ class ArticleController extends Controller implements HasMiddleware
     {
         $articles = $category->articles()->orderBy('created_at', 'desc')->get();
         return view('article.by-Category', compact('category', 'articles'));
+    }
+
+    public function byUser (User $user){
+        $articles = $user->articles()->orderBy('created_at', 'desc')->get();
+        return view('article.by-User',compact('user','articles'));
     }
 
 
