@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Exception;
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Controllers\Middleware;
@@ -74,6 +75,13 @@ class ArticleController extends Controller implements HasMiddleware
 
         //  dd($request->all());
         return redirect(route('homepage'))->with('message', 'Articolo creato con successo');
+    }
+
+
+    public function byCategory(Category $category)
+    {
+        $articles = $category->articles()->orderBy('created_at', 'desc')->get();
+        return view('article.by-Category', compact('category', 'articles'));
     }
 
 

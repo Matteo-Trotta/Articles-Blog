@@ -6,6 +6,7 @@
     <div class="container-fluid">
 
         <a class="navbar-brand" href="{{ route('homepage') }}">HomePage</a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,8 +44,9 @@
 
             @guest
 
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item mx-3">
+                <ul class="navbar-nav mb-2 mb-lg-3">
+                    
+                    <li class="nav-item mx-3 my-1">
                         <a href="{{ route('login') }}" class="btn btn-outline-success">Accedi</a>
                     </li>
                     <li class="nav-item">

@@ -12,22 +12,26 @@
         <div class="alert alert-success">{{ session('message') }}</div>
     @endif
 
+
+   <x-hero/>
+
     <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
 
             @foreach ($articles as $article)
-                <div class="col-12">
+                <div class="col-8">
 
                     <div class="card m-5 p-2 text-center shadow-lg">
 
-                        <img src="{{ Storage::url($article->image) }}" class="card-img-top" alt="Foto dell'articolo">
+                        <img src="{{ Storage::url($article->image) }}" class="img-thumbnail object-fit-md"
+                            alt="Foto dell'articolo">
                         <div class="card-body">
 
                             <h5 class="card-title">{{ $article->title }}</h5>
 
                             <p class="card-text">{{ $article->subtitle }}</p>
 
-                            <p class="small text-danger fw-bold">Categoria: <a href=""
+                            <p class="small text-danger fw-bold">Categoria: <a href="{{ route('article.byCategory', $article->category) }}"
                                     class="text-muted">{{ $article->category->name }}</a></p>
 
                             <a href="{{ route('article.show', $article->id) }}" class="btn btn-primary">Leggi</a>
