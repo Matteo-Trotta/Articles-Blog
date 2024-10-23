@@ -5,7 +5,7 @@
 
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="{{ route('homepage') }}">HomePage</a>
+    
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,19 +15,23 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
+                <li class="nav-item">
+                    <a class="nav-link active fs-2" href="{{ route('homepage') }}">HomePage</a>
+                </li>
+
                 <li class="nav-item ">
-                    <a class="nav-link active" href="{{ route('article.index') }}">Index</a>
+                    <a class="nav-link active fs-2" href="{{ route('article.index') }}">Index</a>
                 </li>
 
 
                 @auth
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('article.create') }}">Aggiungi Articolo</a>
+                        <a class="nav-link active fs-2" href="{{ route('article.create') }}">Aggiungi Articolo</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active text-warning" href="#">Benvenuto , {{ Auth::user()->name }}</a>
+                        <a class="nav-link active fs-2 text-warning" href="#">Benvenuto , {{ Auth::user()->name }}</a>
                     </li>
                     {{-- LOGOUT --}}
                     <li>
