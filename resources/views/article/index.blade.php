@@ -13,23 +13,23 @@
     <div class="container my-5">
         <div class="row justify-content-evenly">
             @foreach ($articles as $article)
-                <div class="col-12 col-md-2">
+                <div class="col-12 col-md-4">
 
-                    <div class="card vh-25" >
-                        <img src="{{ Storage::url($article->image) }}" class="card-img-top"
+                    <div class="card my-5">
+                        <img src="{{ Storage::url($article->image) }}" class="card-img-top img-thumbnail"
                             alt="Immagine dell'articolo: {{ $article->title }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $article->title }}</h5>
                             <p class="card-subtitle">{{ $article->subtitle }}</p>
                             <p class="small text-muted">Categoria:
-                                <a href="{{ route('article.byCategory',$article->category) }}" class="text-capitalize text-muted">{{ $article->category->name }}</a>
+                                <a href="{{ route('article.byCategory', $article->category) }}"
+                                    class="text-capitalize text-muted">{{ $article->category->name }}</a>
                             </p>
                         </div>
 
                         <div class ="card-footer d-flex justify-content-between align-items-center">
                             <p>Redatto il {{ $article->created_at->format('d/m/Y') }} <br>
-                                da {{ $article->user->name }}</p>
-
+                                da <a href="{{ route('article.byUser',$article->user) }}">{{ $article->user->name }}</a></p>
                             <a href="{{ route('article.show', $article) }}" class="btn btn-success">Leggi</a>
 
                         </div>
@@ -40,5 +40,5 @@
             @endforeach
 
         </div>
-
+    </div>
 </x-layout>
