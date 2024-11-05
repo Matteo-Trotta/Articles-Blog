@@ -13,7 +13,7 @@
     @endif
 
 
-   <x-hero/>
+    <x-hero />
 
     <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
@@ -31,7 +31,8 @@
 
                             <p class="card-text">{{ $article->subtitle }}</p>
 
-                            <p class="small text-danger fw-bold">Categoria: <a href="{{ route('article.byCategory', $article->category) }}"
+                            <p class="small text-danger fw-bold">Categoria: <a
+                                    href="{{ route('article.byCategory', $article->category) }}"
                                     class="text-muted">{{ $article->category->name }}</a></p>
 
                             <a href="{{ route('article.show', $article->id) }}" class="btn btn-primary">Leggi</a>
@@ -39,7 +40,8 @@
 
                         <div class="card-footer text-body-secondary border-separate">
                             <p>Redatto il: {{ $article->created_at->format('d/m/Y') }} <br> da:
-                                <a href="{{ route('article.byUser',$article->user) }}">{{ $article->user->name }}</a></p>
+                                <a href="{{ route('article.byUser', $article->user) }}">{{ $article->user->name }}</a>
+                            </p>
 
 
 

@@ -31,6 +31,10 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link active fs-2" href="{{ route('careers') }}">Careers</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link active fs-2 text-warning" href="#">Benvenuto , {{ Auth::user()->name }}</a>
                     </li>
                     {{-- LOGOUT --}}

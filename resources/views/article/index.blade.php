@@ -30,6 +30,7 @@
                         <div class ="card-footer d-flex justify-content-between align-items-center">
                             <p>Redatto il {{ $article->created_at->format('d/m/Y') }} <br>
                                 da <a href="{{ route('article.byUser',$article->user) }}">{{ $article->user->name }}</a></p>
+                                
                             <a href="{{ route('article.show', $article) }}" class="btn btn-success">Leggi</a>
 
                         </div>
