@@ -15,11 +15,19 @@
         </div>
     </div>
 
+    @if (session('message'))
+        <div class="alert alert-success">
+
+            {{ session(message) }}
+
+        </div>
+    @endif
+
     <div class="container">
         <div class="row">
             <div class="col-10">
 
-                <x-requests-table :roleRequests="$adminRquests" role="amministratore" />
+                <x-requests.table :roleRequests="$adminRquests" role="amministratore" />
 
             </div>
         </div>
@@ -30,7 +38,7 @@
         <div class="row">
             <div class="col-10">
 
-                <x-requests-table :roleRequests="$revisorRquests" role="revisore" />
+                <x-requests.table :roleRequests="$revisorRquests" role="revisore" />
 
             </div>
         </div>
@@ -41,7 +49,7 @@
         <div class="row">
             <div class="col-10">
 
-                <x-requests-table :roleRequests="$writerRquests" role="redattore" />
+                <x-requests.table :roleRequests="$writerRquests" role="redattore" />
 
             </div>
         </div>

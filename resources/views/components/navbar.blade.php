@@ -5,7 +5,7 @@
 
     <div class="container-fluid">
 
-    
+
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,6 +25,13 @@
 
 
                 @auth
+                
+                    @if (Auth::user()->is_admin)
+                        <li class="nav-item">
+                            <a class="nav-link active fs-2" href="{{ route('admin.dashboard') }}">Dashboard admin</a>
+                        </li>
+                    @endif
+
 
                     <li class="nav-item">
                         <a class="nav-link active fs-2" href="{{ route('article.create') }}">Aggiungi Articolo</a>
@@ -53,7 +60,7 @@
             @guest
 
                 <ul class="navbar-nav mb-2 mb-lg-3">
-                    
+
                     <li class="nav-item mx-3 my-1">
                         <a href="{{ route('login') }}" class="btn btn-outline-success">Accedi</a>
                     </li>

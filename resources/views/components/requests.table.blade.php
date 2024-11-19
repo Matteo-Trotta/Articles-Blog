@@ -24,9 +24,34 @@
 
                 <td>{{ $user->email }}</td>
 
-                td>
+                <td>
+                    @switch($role)
+                        @case('amministratore')
+                            <form action="{{ route(admin . setAdmin, $user) }}" method="POST">
+                                @csrf
+                                @method('patch')
+                                <button type="submit" class="btn btn-secondary">Attiva {{ $role }}</button>
+                            </form>
+                        @break
 
-                <button class="btn btn-secondary">Attiva {{ $role }}</button>
+                        @case('revisore')
+                            <form action="{{ route(admin . seRevisor, $user) }}" method="POST">
+                                @csrf
+                                @method('patch')
+                                <button type="submit" class="btn btn-secondary">Attiva {{ $role }}</button>
+                            </form>
+                        @break
+
+                        <form action="{{ route(admin . setWriter, $user) }}" method="POST">
+                            @csrf
+                            @method('patch')
+                            <button type="submit" class="btn btn-secondary">Attiva {{ $role }}</button>
+                        </form>
+
+                        @default
+                    @endswitch
+
+                    <button class="btn btn-secondary">Attiva {{ $role }}</button>
                 </td>
 
             </tr>

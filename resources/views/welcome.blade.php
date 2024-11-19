@@ -21,7 +21,7 @@
 
     <x-hero />
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row justify-content-center align-items-center">
 
             @foreach ($articles as $article)
@@ -29,7 +29,7 @@
 
                     <div class="card m-5 p-2 text-center shadow-lg">
 
-                        <img src="{{ Storage::url($article->image) }}" class="img-thumbnail object-fit-md"
+                        <img src="{{ Storage::url($article->image) }}" class="img-thumbnail img-fluid "
                             alt="Foto dell'articolo">
                         <div class="card-body">
 

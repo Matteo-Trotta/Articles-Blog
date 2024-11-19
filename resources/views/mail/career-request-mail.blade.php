@@ -13,9 +13,11 @@
 
     <h1>È arrivata una richiesta per il ruolo di {{ $info['role'] }}</h1>
     <p>Ricevuta da {{ $info['email'] }}</p>
-    <h4>Messaggio :< /h4>
+    <h4>Messaggio :
             <p>{{ $info['message'] }}</p>
 
 </body>
 
 </html>
+
+

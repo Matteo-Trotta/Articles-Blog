@@ -18,11 +18,14 @@ return new class extends Migration
             $table->string('subtitle');
             $table->string('image');
             $table->longText('body');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
+
+            // È necessario dichiarare le colonne prima di definire le chiavi esterne.
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('category_id')->references('category')->on('categories')->onDelete('SET NULL');
             $table->unsignedBigInteger('category_id')->nullable();
-            
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');
+
             $table->timestamps();
         });
     }
