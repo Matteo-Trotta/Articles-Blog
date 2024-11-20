@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RevisorController;
+use Faker\Provider\Lorem;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
@@ -44,3 +45,5 @@ Route::middleware('revisor')->group(function () {
     Route::get('/revisor/dashboard',[RevisorController::class,'dashboard'])->name('revisor.dashboard');
 
 });
+
+

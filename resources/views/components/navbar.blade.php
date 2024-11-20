@@ -1,11 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-
-
-
-
     <div class="container-fluid">
-
-
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,25 +7,23 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarText">
+            <!-- Navbar Links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
                     <a class="nav-link active fs-2" href="{{ route('homepage') }}">HomePage</a>
                 </li>
 
-                <li class="nav-item ">
+                <li class="nav-item">
                     <a class="nav-link active fs-2" href="{{ route('article.index') }}">Index</a>
                 </li>
 
-
                 @auth
-                
                     @if (Auth::user()->is_admin)
                         <li class="nav-item">
                             <a class="nav-link active fs-2" href="{{ route('admin.dashboard') }}">Dashboard admin</a>
                         </li>
                     @endif
-
 
                     <li class="nav-item">
                         <a class="nav-link active fs-2" href="{{ route('article.create') }}">Aggiungi Articolo</a>
@@ -40,40 +32,25 @@
                     <li class="nav-item">
                         <a class="nav-link active fs-2" href="{{ route('careers') }}">Careers</a>
                     </li>
+                @endauth
+            </ul>
 
-                    <li class="nav-item">
-                        <a class="nav-link active fs-2 text-warning" href="#">Benvenuto , {{ Auth::user()->name }}</a>
-                    </li>
-                    {{-- LOGOUT --}}
-                    <li>
-                        <a href="{{ route('homepage') }}" class="btn btn-outline-danger"
-                            onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
-                    </li>
+            <!-- Navbar Right -->
+            <div class="d-flex ms-auto align-items-center">
+                @auth
+                    <span class="navbar-text text-warning me-3 fs-5">
+                        Benvenuto, {{ Auth::user()->name }}
+                    </span>
+                    <a href="{{ route('homepage') }}" class="btn btn-outline-danger"
+                        onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+                    <form action="{{ route('logout') }}" method="POST" id="form-logout" style="display:none;">@csrf</form>
+                @endauth
 
-                    <form action="{{ route('logout') }}" method="POST" id="form-logout">@csrf</form>
-
-                    {{-- LOGOUT --}}
-                </ul>
-            @endauth
-
-
-            @guest
-
-                <ul class="navbar-nav mb-2 mb-lg-3">
-
-                    <li class="nav-item mx-3 my-1">
-                        <a href="{{ route('login') }}" class="btn btn-outline-success">Accedi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('register') }}" class="btn btn-outline-primary">Registrati</a>
-                    </li>
-
-
-
-                </ul>
-            @endguest
-
-
+                @guest
+                    <a href="{{ route('login') }}" class="btn btn-outline-success mx-1">Accedi</a>
+                    <a href="{{ route('register') }}" class="btn btn-outline-primary mx-1">Registrati</a>
+                @endguest
+            </div>
         </div>
     </div>
 </nav>
