@@ -9,34 +9,34 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        $adminRequests = User::where('is_admin', Null)->get();
-        $revisorRequests = User::where('is_revisor', Null)->get();
-        $writerRequests = User::where('is_writer', null)->get();
+        $adminRequests = User::whereNull('is_admin')->get();
+        $revisorRequests = User::whereNull('is_revisor')->get();
+        $writerRequests = User::whereNull('is_writer')->get();
+
         return view('admin.dashboard', compact('adminRequests', 'revisorRequests', 'writerRequests'));
     }
-
 
     public function setAdmin(User $user)
     {
         $user->is_admin = true;
         $user->save();
-        return redirect(route('admin.dashboard'))->with('message', 'Utente $user->name è stato promosso al ruolo di amministratore');
+
+        return redirect(route('admin.dashboard'))->with('message', "Utente {$user->name} è stato promosso al ruolo di amministratore");
     }
 
-
-    public function setrevisor(User $user)
+    public function setRevisor(User $user)
     {
         $user->is_revisor = true;
         $user->save();
-        return redirect('route(admin.dashboard)')->with('message', 'Utente $user->name è stato promosso al ruolo di revisore');
+
+        return redirect(route('admin.dashboard'))->with('message', "Utente {$user->name} è stato promosso al ruolo di revisore");
     }
 
+    public function setWriter(User $user)
+    {
+        $user->is_writer = true;
+        $user->save();
 
-    public function setWriter(User $user){
-
-$user->is_writer = true;
-$user->save();
-return redirect(route('admin.dashboard'))->with('message','Utente $user->name è stato promosso al ruolo di scrittore');
-
+        return redirect(route('admin.dashboard'))->with('message', "Utente {$user->name} è stato promosso al ruolo di scrittore");
     }
 }

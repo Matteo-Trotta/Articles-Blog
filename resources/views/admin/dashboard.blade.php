@@ -1,58 +1,41 @@
 <x-layout>
-
-
-
-    <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-12">
-
+    <div class="container">
+        <div class="row text-center align-items-center m-0 justify-content-center">
+            <div class="col-10">
                 <h2>
-                    Bentornato , amministratore {Auth::user()->name}
-
+                    Bentornato, amministratore {{ Auth::user()->name }}
                 </h2>
-
             </div>
         </div>
     </div>
 
     @if (session('message'))
         <div class="alert alert-success">
-
-            {{ session(message) }}
-
+            {{ session('message') }}
         </div>
     @endif
 
     <div class="container">
-        <div class="row">
+        <div class="row text-center align-items-center m-0 justify-content-center">
             <div class="col-10">
-
-                <x-requests.table :roleRequests="$adminRquests" role="amministratore" />
-
+                <x-requests-table :roleRequests="$adminRequests" role="amministratore" />
             </div>
         </div>
     </div>
-
 
     <div class="container">
-        <div class="row">
+        <div class="row text-center align-items-center m-0 justify-content-center">
             <div class="col-10">
-
-                <x-requests.table :roleRequests="$revisorRquests" role="revisore" />
-
+                <x-requests-table :roleRequests="$revisorRequests" role="revisore" />
             </div>
         </div>
     </div>
-
 
     <div class="container">
-        <div class="row">
+        <div class="row text-center align-items-center m-0 justify-content-center ">
             <div class="col-10">
-
-                <x-requests.table :roleRequests="$writerRquests" role="redattore" />
-
+                <x-requests-table :roleRequests="$writerRequests" role="redattore" />
             </div>
         </div>
     </div>
-
 </x-layout>
