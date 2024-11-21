@@ -30,11 +30,15 @@
                 <td>
 
                     @if (is_null($article->is_accepted))
-
                         <a href="{{ route('article.show', $article) }}
-                        ') }}" class="btn btn-secondary">Leggi Articolo</a>
+                        ') }}"
+                            class="btn btn-secondary">Leggi Articolo</a>
                     @else
-                        <a href="#" class="btn btn-primary">Riporta in revisione</a>
+                        <form action="{{ route('revisor.undoArticle', $article) }}" method="POST">
+                            @csrf
+
+                            <button type="submit" class="btn btn-secondary">Riporta in Revisione</button>
+                        </form>
                     @endif
 
 

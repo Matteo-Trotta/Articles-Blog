@@ -15,7 +15,7 @@ class PublicController extends Controller implements HasMiddleware
 {
     public function homepage()
     {
-        $articles = Article::orderBy('created_at', 'desc')->take(4)->get();
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(4)->get();
         return view('welcome', compact('articles'));
     }
 
@@ -53,11 +53,10 @@ class PublicController extends Controller implements HasMiddleware
             case 'writer':
                 $user->is_writer = null;
                 break;
+        }
 
-            }
-            
-            $user->update();
-
+        $user->update();
+// ERRORE DI INTELEPHENSE?
         return redirect(route('homepage'))->with('message', 'Mail inviata con successo!');
     }
 

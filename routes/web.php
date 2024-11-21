@@ -42,8 +42,13 @@ Route::middleware('admin')->group(function () {
 
 Route::middleware('revisor')->group(function () {
 
-    Route::get('/revisor/dashboard',[RevisorController::class,'dashboard'])->name('revisor.dashboard');
+    Route::get('/revisor/dashboard', [RevisorController::class, 'dashboard'])->name('revisor.dashboard');
+
+    Route::post('/revisor/{article}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
+
+    Route::post('/revisor/{article}/reject', [RevisorController::class, 'rejectArticle'])->name('revisor.rejectArticle');
+
+    Route::post('/revisor/{article}/undo', [RevisorController::class, 'undoArticle'])->name('revisor.undoArticle');
+
 
 });
-
-

@@ -25,6 +25,12 @@
                         </li>
                     @endif
 
+                    @if (Auth::user()->is_revisor)
+                    <li class="nav-item">
+                        <a class="nav-link active fs-2" href="{{ route('revisor.dashboard') }}">Dashboard revisor</a>
+                    </li>
+                @endif
+
                     <li class="nav-item">
                         <a class="nav-link active fs-2" href="{{ route('article.create') }}">Aggiungi Articolo</a>
                     </li>
