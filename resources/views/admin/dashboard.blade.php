@@ -10,7 +10,7 @@
     </div>
 
     @if (session('message'))
-        <div class="alert alert-success">
+        <div class="alert-success text-center">
             {{ session('message') }}
         </div>
     @endif

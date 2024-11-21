@@ -25,19 +25,21 @@
                 </div>
 
                 {{-- BOTTONI DA REVISORE --}}
-                @if (Auth::user && Auth::user()->is_revisor)
+                @if (Auth::user() && Auth::user()->is_revisor)
                     <div class="container my-5">
                         <div class="row">
                             <div class="d-flex justify-content-evenly">
+                                
                                 <form action="{{ route('revisor.acceptArticle', $article) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-success">Accetta articolo</button>
                                 </form>
 
-                                <form action="{{ route('revisor.rejectArticle', $article) }}" method="POST') }}">@csrf
-
-                                    <button class="btn btn-danger">Rifiuta articolo</button>
+                                <form action="{{ route('revisor.rejectArticle', $article) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Rifiuta articolo</button>
                                 </form>
+                                
 
                             </div>
                         </div>
