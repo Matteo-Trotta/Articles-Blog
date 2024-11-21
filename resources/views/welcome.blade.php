@@ -19,7 +19,7 @@
     @endif
 
 
-    <x-topbar/>
+    <x-topbar />
     <x-hero />
 
     <div class="container">

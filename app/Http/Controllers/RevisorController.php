@@ -20,7 +20,7 @@ class RevisorController extends Controller
     
 // GESTIONE STATO DEGLI ARTICOLI
 
-    public function acceptarticle(Article $article)
+    public function acceptArticle(Article $article)
     {
 
         $article->is_accepted = true;
@@ -40,7 +40,7 @@ class RevisorController extends Controller
     {
 
         $article->is_accepted = null;
-        $article->save;
+        $article->save();
         return redirect(route('revisor.dashboard'))->with('message', 'Articolo rimandato in revisione');
     }
 }

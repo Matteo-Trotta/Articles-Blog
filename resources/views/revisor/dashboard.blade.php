@@ -2,8 +2,8 @@
 
     <div class="container-fluid p-5 bg-secondary-subtle text-center">
         <div class="row justify-content-center">
-            <div class="col-12">
 
+            <div class="col-12">
                 <h1 class="display-1">Bentornato, Revisore {{ Auth::user()->name }}</h1>
             </div>
 
@@ -11,23 +11,29 @@
 
     </div>
 
+
     @if (session('message'))
         <div class="alert-alert-success">{{ session('message') }}</div>
     @endif
 
+
+    {{-- DA REVISIONARE --}}
+
     <div class="container my-5">
-        div class="row justify-content-center">
-        <div class="col-12">
+        <div class="row justify-content-center">
+            <div class="col-12">
 
-            <h2>Articoli da revisionare</h2>
+                <h2>Articoli da revisionare</h2>
 
-            <x-articles-table :articles="$unrevisionedArticles" />
+                <x-articles-table :articles="$unrevisionedArticles" />
+
+            </div>
 
         </div>
 
     </div>
 
-    </div>
+    {{-- PUBBLICATI --}}
 
     <div class="container my-5">
 
@@ -41,6 +47,9 @@
         </div>
 
     </div>
+
+    {{-- RIFIUTATI --}}
+
 
     <div class="container y-5">
 
