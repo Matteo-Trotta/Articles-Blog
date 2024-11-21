@@ -13,7 +13,7 @@
 
 
     @if (session('message'))
-        <div class="alert-alert-success">{{ session('message') }}</div>
+        <div class="alert alert-warning fs-3 text-center shadow-md">{{ session('message') }}</div>
     @endif
 
 
