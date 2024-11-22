@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center">
         <div class="col-12 border p-0">
 
             <section class="m-0 vh-50 bg-warning-subtle">

@@ -58,3 +58,7 @@ Route::middleware('writer')->group(function () {
     Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
     
 });
+
+
+// ROTTA CHE GESTISCE I DATI INSERITI NELLA BARRA DI RICERCA
+Route::get('/article7search', [ArticleController::class, 'articleSearch'])->name('article.search');
