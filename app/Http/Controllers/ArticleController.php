@@ -75,7 +75,7 @@ class ArticleController extends Controller implements HasMiddleware
         ]);
 
         //  dd($request->all());
-        return redirect(route('homepage'))->with('message', 'Articolo creato con successo');
+        return redirect(route('homepage'))->with('message', 'Articolo creato con successo, in attesa di revisione');
     }
 
 

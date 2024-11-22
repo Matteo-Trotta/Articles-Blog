@@ -9,9 +9,7 @@ use Faker\Provider\Lorem;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
-Route::get('/articles/create', [ArticleController::class, 'create'])->name('article.create');
 
-Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
 
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
 
@@ -27,7 +25,7 @@ Route::get('/careers', [PublicController::class, 'careers'])->name('careers');
 Route::post('/careers/submit', [PublicController::class, 'careersSubmit'])->name('careers.submit');
 
 
-// grouping
+// grouping ADMIN   
 Route::middleware('admin')->group(function () {
 
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
@@ -39,6 +37,7 @@ Route::middleware('admin')->group(function () {
     Route::patch('/admin/{user}/set-writer', [AdminController::class, 'setWriter'])->name('admin.setWriter');
 });
 
+// GROUPING REVISOR
 
 Route::middleware('revisor')->group(function () {
 
@@ -49,4 +48,13 @@ Route::middleware('revisor')->group(function () {
     Route::post('/revisor/{article}/reject', [RevisorController::class, 'rejectArticle'])->name('revisor.rejectArticle');
 
     Route::post('/revisor/{article}/undo', [RevisorController::class, 'undoArticle'])->name('revisor.undoArticle');
+});
+
+// GROUPING WRITER
+Route::middleware('writer')->group(function () {
+
+    Route::get('/articles/create', [ArticleController::class, 'create'])->name('article.create');
+
+    Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
+    
 });

@@ -67,7 +67,7 @@
 
                 <h2>Lavora come revisore</h2>
 
-                <p>Scegliendo di lavorare come revisore, deciderai se un articolo può essere pubblicato o meno in
+                <p>Scegliendo di lavorare come revisore, valuterai se un articolo può essere pubblicato o meno in
                     piattaforma.</p>
 
                 <h2>Lavora come redattore</h2>
