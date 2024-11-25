@@ -1,5 +1,5 @@
 
-<div class="d-flex alig-items-center position center">
+<div class="d-none d-md-flex alig-items-center justify-content-center">
 
     <form action="{{ route('article.search') }}" method="GET" class="d-flex" role="search">
 

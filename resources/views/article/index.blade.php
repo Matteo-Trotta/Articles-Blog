@@ -25,6 +25,15 @@
                                 <a href="{{ route('article.byCategory', $article->category) }}"
                                     class="text-capitalize text-muted">{{ $article->category->name }}</a>
                             </p>
+
+                            <p class=" card-text small text-muted my-o">
+
+                                @foreach ($article->tags as $tag )
+
+                                #{{ $tag->name }}
+                                    
+                                @endforeach
+                            </p>
                         </div>
 
                         <div class ="card-footer d-flex justify-content-between align-items-center">

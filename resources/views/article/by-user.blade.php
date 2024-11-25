@@ -22,6 +22,14 @@
                             <h5 class="card-title">{{ $article->title }}</h5>
                             <p class="card-subtitle">{{ $article->subtitle }}</p>
                             <a href="{{ route('article.byCategory',$article->category) }}">{{ $article->category->name }}</a>
+                            <p class="small text-muted my-o">
+
+                                @foreach ($article->tags as $tag )
+
+                                #{{ $tag->name }}
+                                    
+                                @endforeach
+                            </p>
                         </div>
 
                         <div class ="card-footer d-flex justify-content-between align-items-center">

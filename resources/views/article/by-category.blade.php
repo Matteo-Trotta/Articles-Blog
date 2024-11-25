@@ -21,12 +21,21 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $article->title }}</h5>
                             <p class="card-subtitle">{{ $article->subtitle }}</p>
+                            <p class="small text-muted my-o">
+
+                                @foreach ($article->tags as $tag )
+
+                                #{{ $tag->name }}
+                                    
+                                @endforeach
+                            </p>
 
                         </div>
 
                         <div class ="card-footer d-flex justify-content-between align-items-center">
                             <p>Redatto il {{ $article->created_at->format('d/m/Y') }} <br>
-                                da <a href="{{ route('article.byUser', $article->user) }}">{{ $article->user->name }}</a>
+                                da <a
+                                    href="{{ route('article.byUser', $article->user) }}">{{ $article->user->name }}</a>
                             </p>
 
                             <a href="{{ route('article.show', $article) }}" class="btn btn-success">Leggi</a>

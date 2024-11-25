@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use App\Models\Tag;
 use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
@@ -16,7 +17,7 @@ class ArticleController extends Controller implements HasMiddleware
     public static function middleware()
     {
         return [
-            new Middleware('auth', except: ['index', 'show', 'byCategory', 'byUser','articleSearch']),
+            new Middleware('auth', except: ['index', 'show', 'byCategory', 'byUser', 'articleSearch']),
         ];
     }
 
@@ -56,6 +57,7 @@ class ArticleController extends Controller implements HasMiddleware
             'body' => 'required|min:10',
             'image' => 'required|image',
             'category' => 'required',
+            'tags' => 'required',
         ]);
 
 
@@ -73,6 +75,18 @@ class ArticleController extends Controller implements HasMiddleware
             'user_id' => Auth::user()->id,
 
         ]);
+
+        $tags = explode(',', $request->tags);
+        foreach ($tags as $i => $tag) {
+            $tags[$i] = trim($tag);
+        }
+
+        foreach ($tags as $tag) {
+            $newTag = Tag::updateOrCreate([
+                'name' => strtolower($tag)
+            ]);
+            $articles->tags()->attach($newTag);
+        }
 
         //  dd($request->all());
         return redirect(route('homepage'))->with('message', 'Articolo creato con successo, in attesa di revisione');
