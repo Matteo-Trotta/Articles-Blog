@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\WriterController;
 use Faker\Provider\Lorem;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
@@ -67,6 +68,7 @@ Route::middleware('writer')->group(function () {
 
     Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
     
+    Route::get('/writer/dashboard',[WriterController::class, 'dashboard'])->name('writer.dashboard');
 });
 
 
