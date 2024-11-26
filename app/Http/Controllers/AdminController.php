@@ -69,8 +69,18 @@ class AdminController extends Controller
         return redirect()->back()->with('message', 'Categoria aggiornata correttamente');
     }
 
-    public function deleteCategory(Category $category){
+    public function deleteCategory(Category $category)
+    {
         $category->delete();
         return redirect()->back()->with('message', 'Categoria eliminata correttamente');
+    }
+
+
+    public function storeCategory(Request $request)
+    {
+        Category::create([
+            'name' => strtolower($request->name),
+        ]);
+        return redirect()->back()->with('message', 'Categoria inserita correttamente');
     }
 }

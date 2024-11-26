@@ -10,7 +10,7 @@
     </div>
 
     @if (session('message'))
-        <div class="alert-success text-center">
+        <div class="alert alert-success text-center fs-2">
             {{ session('message') }}
         </div>
     @endif
@@ -47,6 +47,11 @@
 
             <div class="col-12">
                 <h2>Indice categorie</h2>
+                <form action="{{ route('admin.storeCategory') }}" method="POST" class="w-50 d-flex m-3">
+                    @csrf
+                    <input type="text" name="name" placeholder="Nuova categoria" class="form-control me-2">
+                    <button type="submit" class="btn btn-primary">Inserisci</button>
+                </form>
                 <x-metainfo-table :metaInfos='$categories' metaType='categorie' />
             </div>
         </div>
