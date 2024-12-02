@@ -67,10 +67,16 @@ Route::middleware('writer')->group(function () {
     Route::get('/articles/create', [ArticleController::class, 'create'])->name('article.create');
 
     Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
-    
-    Route::get('/writer/dashboard',[WriterController::class, 'dashboard'])->name('writer.dashboard');
+
+    Route::get('/writer/dashboard', [WriterController::class, 'dashboard'])->name('writer.dashboard');
+
+    Route::get('/articles/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
+
+    Route::put('/article/update/{article}', [ArticleController::class, 'update'])->name('article.update');
+
+    route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
 });
 
 
 // ROTTA CHE GESTISCE I DATI INSERITI NELLA BARRA DI RICERCA
-Route::get('/article7search', [ArticleController::class, 'articleSearch'])->name('article.search');
+Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');

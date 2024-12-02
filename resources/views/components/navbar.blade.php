@@ -18,24 +18,36 @@
                     <a class="nav-link active fs-2" href="{{ route('article.index') }}">Index</a>
                 </li>
 
+
+                @if (Auth::user()->is_writer)
+                    <li class="nav-item">
+                        <a class="nav-link active fs-2" href="{{ route('article.create') }}">Aggiungi Articolo</a>
+                    </li>
+                @endif
+
                 @auth
                     @if (Auth::user()->is_admin)
                         <li class="nav-item">
-                            <a class="nav-link active fs-2" href="{{ route('admin.dashboard') }}">Dashboard admin</a>
+                            <a class="nav-link active fs-2" href="{{ route('admin.dashboard') }}">Dashboard Admin</a>
+                        </li>
+                    @endif
+
+
+                    @if (Auth::user()->is_revisor)
+                        <li class="nav-item">
+                            <a class="nav-link active fs-2" href="{{ route('revisor.dashboard') }}">Dashboard Revisor</a>
                         </li>
                     @endif
 
                     @if (Auth::user()->is_writer)
                         <li class="nav-item">
-                            <a class="nav-link active fs-2" href="{{ route('article.create') }}">Aggiungi Articolo</a>
+                            <a class="nav-link active fs-2" href="{{ route('writer.dashboard') }}">Dashboard Writer</a>
                         </li>
                     @endif
 
-                    @if (Auth::user()->is_revisor)
-                        <li class="nav-item">
-                            <a class="nav-link active fs-2" href="{{ route('revisor.dashboard') }}">Dashboard revisor</a>
-                        </li>
-                    @endif
+
+
+
 
 
                     <li class="nav-item">
