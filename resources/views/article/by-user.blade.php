@@ -16,7 +16,7 @@
                 <div class="col-6 col-md-3">
 
                     <div class="card my-5">
-                        <img src="{{ Storage::url($article->image) }}" class="card-img-top img-thumbnail"
+                        <img src="{{ Storage::url($article->image) }}" class="card-img-top img-thumbnail img-fluid"
                             alt="Immagine dell'articolo: {{ $article->title }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $article->title }}</h5>

@@ -19,13 +19,15 @@
                 </li>
 
 
-                @if (Auth::user()->is_writer)
-                    <li class="nav-item">
-                        <a class="nav-link active fs-2" href="{{ route('article.create') }}">Aggiungi Articolo</a>
-                    </li>
-                @endif
 
                 @auth
+
+                    @if (Auth::user()->is_writer)
+                        <li class="nav-item">
+                            <a class="nav-link active fs-2" href="{{ route('article.create') }}">Aggiungi Articolo</a>
+                        </li>
+                    @endif
+                    
                     @if (Auth::user()->is_admin)
                         <li class="nav-item">
                             <a class="nav-link active fs-2" href="{{ route('admin.dashboard') }}">Dashboard Admin</a>
@@ -60,7 +62,7 @@
             <div class="d-flex ms-auto align-items-center">
                 @auth
                     <span class="navbar-text text-warning me-3 fs-5">
-                        Benvenuto, {{ Auth::user()->name }}
+                        Ciao, {{ Auth::user()->name }}
                     </span>
                     <a href="{{ route('homepage') }}" class="btn btn-outline-danger"
                         onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
