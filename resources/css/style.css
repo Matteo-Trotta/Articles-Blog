@@ -8,7 +8,7 @@
     color: #00e6f6;
     background-color: #00e6f6;
 }
-/* CSS */
+
 .button-49,
 .button-49:after {
     width: 150px;
@@ -121,4 +121,11 @@ text-decoration: underline #ff013c;
 
 
 
+}
+
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover; 
+    object-position: center; 
 }

@@ -16,16 +16,16 @@
 
     <x-hero />
 
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center m-0 p-0 h-100">
 
-    @foreach ($articles as $article)
-        <div class="col-12 col-md-3 ">
-
-
-            <x-article-card :article="$article" />
+            @foreach ($articles as $article)
+                <x-article-card :article="$article" />
+            @endforeach
 
 
         </div>
-    @endforeach
+    </div>
 
 
 
