@@ -18,6 +18,12 @@
                     <a class="nav-link active " href="{{ route('article.index') }}">Index</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link active " href="{{ ('https://sitiwebromatrottamatteo.com/') }}">torna al sito</a>
+                </li>
+
+
+
 
 
                 @auth
