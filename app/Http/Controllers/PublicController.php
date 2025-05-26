@@ -56,7 +56,7 @@ class PublicController extends Controller implements HasMiddleware
         }
 
         $user->update();
-// ERRORE DI INTELEPHENSE?
+        // ERRORE DI INTELEPHENSE?
         return redirect(route('homepage'))->with('message', 'Mail inviata con successo!');
     }
 
@@ -67,4 +67,7 @@ class PublicController extends Controller implements HasMiddleware
                 new Middleware('auth', except: ['homepage']),
             ];
     }
+
+
+   
 }

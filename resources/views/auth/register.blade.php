@@ -22,7 +22,7 @@
 
             <div class="col-4">
 
-                <form action="{{ route('register') }}" method="POST" class="shadow-lg rounded-3 p-4 my5">
+                <form action="{{ route('register') }}" method="POST" class="shadow-lg rounded-3 p-4 my5" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group">
@@ -70,6 +70,14 @@
                         <label for="password_confirmation">Password Confirmation</label>
                         <input type="password" class="form-control" id="password_confirmation"
                             name="password_confirmation">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profile_image">Immagine Profilo</label>
+                        <input type="file" class="form-control" id="profile_image" name="profile_image">
+                        @error('profile_image')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
 
