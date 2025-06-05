@@ -1,6 +1,6 @@
 <footer class="bg-body-tertiary text-center">
     <!-- Grid container -->
-    <div class="container p-4">
+    <div class="container ">
         <!-- Section: Images -->
         <section class="">
             <div class="row">

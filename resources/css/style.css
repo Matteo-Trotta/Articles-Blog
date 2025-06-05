@@ -117,7 +117,11 @@
 
 .active:hover
 {
-text-decoration: underline #ff013c;
+font-size: 30px;
+font-weight: semibold;
+
+text-decoration:  underline rgb(28, 93, 149);
+
 
 
 

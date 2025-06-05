@@ -13,7 +13,7 @@
 
 
     <x-topbar />
-        <p class="text-center display-1 bg-warning border-5 m-5"> In costruzione . . .</p>
+
 
     <x-hero />
     <div class="container-fluid">

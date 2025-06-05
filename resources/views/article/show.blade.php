@@ -2,21 +2,38 @@
 
     <div class="container mt-5 mb-1 ">
         <div class="row text-center justify-content-center">
-            <div class="col-12 rounded bg-danger mb-2">
-                <h1 class="display-1 text-white">{{ $article->title }}</h1>
+            <div class="col-12 rounded  mb-2">
+                <h1 class="display-2 text-black">{{ $article->title }}</h1>
             </div>
 
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row justify-content-center">
 
-            <div class="col-12 col-lg-6">
+    <div class="container-fluid my-5">
+        <div class="row text-center">
+            <div class="col-12">
+
+                <h5 class="">Cosa troverai in questo articolo</h5 >
+
+                <ul class="list-unstyled">
+                <li>Perchè un sito web?</li>
+                <li>Visibilità o Presenza online?</li>
+                <li>Rafforza la tua immagine personale</li>
+                <li>Comunicazione mirata e personalizzata</li>
+            </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center d-flex flex-column align-items-center">
+
+            <div class="col-12 col-lg-4">
 
 
                 <img src="{{ Storage::url($article->image) }}"
-                    class="img-fluid rounded img-thumbnail border-5 border-warning shadow-lg "
+                    class="img-fluid rounded  shadow-lg "
                     alt="Immagine dell'articolo: {{ $article->title }}">
 
 
