@@ -81,3 +81,6 @@ Route::middleware('writer')->group(function () {
 Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');
 
 
+Route::get('/test-503', function () {
+    abort(503);
+});
