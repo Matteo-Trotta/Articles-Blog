@@ -80,7 +80,7 @@ Route::middleware('writer')->group(function () {
 // ROTTA CHE GESTISCE I DATI INSERITI NELLA BARRA DI RICERCA
 Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');
 
-
-Route::get('/test-503', function () {
-    abort(503);
-});
+// TEST ERRORE 503 
+// Route::get('/test-503', function () {
+//     abort(503);
+// });
